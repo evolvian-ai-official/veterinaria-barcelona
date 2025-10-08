@@ -335,48 +335,76 @@ export default function App() {
         Escríbenos y te responderemos lo antes posible. También puedes visitarnos en nuestra clínica.
       </p>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const nombre = e.target.nombre.value;
-          const correo = e.target.correo.value;
-          const mensaje = e.target.mensaje.value;
-          const asunto = encodeURIComponent(`Consulta de ${nombre}`);
-          const cuerpo = encodeURIComponent(
-            `Hola, soy ${nombre} (${correo}).\n\n${mensaje}\n\nEnviado desde la página web de Veterinaria Barcelona 🐾`
-          );
-          window.location.href = `mailto:cvbarcelona.mx@gmail.com?subject=${asunto}&body=${cuerpo}`;
-        }}
-        className="flex flex-col gap-5"
-      >
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Tu nombre"
-          required
-          className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
-        />
-        <input
-          type="email"
-          name="correo"
-          placeholder="Tu correo electrónico"
-          required
-          className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
-        />
-        <textarea
-          name="mensaje"
-          placeholder="Tu mensaje"
-          rows="4"
-          required
-          className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
-        />
-        <button
-          type="submit"
-          className="mt-4 bg-[#f5a623] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#274472] hover:text-white transition"
-        >
-          Enviar mensaje
-        </button>
-      </form>
+     <form
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    const nombre = e.target.nombre.value.trim();
+    const correo = e.target.correo.value.trim();
+    const mensaje = e.target.mensaje.value.trim();
+
+    const asunto = encodeURIComponent(`Consulta de ${nombre}`);
+    const cuerpo = encodeURIComponent(
+      `Hola, soy ${nombre} (${correo}).\n\n${mensaje}\n\nEnviado desde la página web de Veterinaria Barcelona 🐾`
+    );
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=cvbarcelona.mx@gmail.com&su=${asunto}&body=${cuerpo}`;
+    const outlookUrl = `https://outlook.live.com/mail/deeplink/compose?to=cvbarcelona.mx@gmail.com&subject=${asunto}&body=${cuerpo}`;
+    const mailtoUrl = `mailto:cvbarcelona.mx@gmail.com?subject=${asunto}&body=${cuerpo}`;
+
+    // 🔹 Forzamos apertura en Gmail
+    const gmailTab = window.open(gmailUrl, "_blank");
+
+    // Si el navegador bloquea la nueva pestaña o Gmail no abre, intentar Outlook
+    setTimeout(() => {
+      if (!gmailTab || gmailTab.closed || typeof gmailTab.closed === "undefined") {
+        const outlookTab = window.open(outlookUrl, "_blank");
+
+        // Si también falla Outlook, usar mailto como último recurso
+        setTimeout(() => {
+          if (
+            !outlookTab ||
+            outlookTab.closed ||
+            typeof outlookTab.closed === "undefined"
+          ) {
+            window.location.href = mailtoUrl;
+          }
+        }, 800);
+      }
+    }, 800);
+  }}
+  className="flex flex-col gap-5"
+>
+  <input
+    type="text"
+    name="nombre"
+    placeholder="Tu nombre"
+    required
+    className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
+  />
+  <input
+    type="email"
+    name="correo"
+    placeholder="Tu correo electrónico"
+    required
+    className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
+  />
+  <textarea
+    name="mensaje"
+    placeholder="Tu mensaje"
+    rows="4"
+    required
+    className="border border-[#d9d9d9] p-4 rounded-xl focus:outline-[#a3d9b1] text-[#274472]"
+  />
+  <button
+    type="submit"
+    className="mt-4 bg-[#f5a623] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#274472] hover:text-white transition"
+  >
+    Enviar mensaje
+  </button>
+</form>
+
+
 
       {/* Información de contacto */}
       <div className="mt-10 text-[#274472]/80 flex flex-col gap-2 text-sm">
