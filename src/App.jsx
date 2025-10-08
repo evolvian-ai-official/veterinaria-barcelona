@@ -291,14 +291,15 @@ export default function App() {
         Nuestros clientes están satisfechos por la calidad de nuestros servicios, la atención profesional y el cariño con el que cuidamos a cada mascota.
       </p>
 
-      <a
-        href="https://www.google.com/maps/place/Del+Consuelo+7,+Santa+Martha+Acatitla,+Iztapalapa,+09510+Ciudad+de+M%C3%A9xico,+CDMX"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-[#274472] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#1f3a5f] hover:shadow-md transition-all duration-300 ease-out"
-      >
-        Ver reseñas en Google →
-      </a>
+        <a
+    href="https://maps.app.goo.gl/7zgpfTZCyC6yqmXj9"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-[#274472] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#1f3a5f] hover:shadow-md transition-all duration-300 ease-out"
+  >
+    Ver reseñas en Google →
+  </a>
+
     </div>
   </div>
 </section>
