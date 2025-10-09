@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import {
   PawPrint,
   Stethoscope,
@@ -8,7 +9,9 @@ import {
   Phone,
   Clock,
   Mail,
+  Bone, // 👈 este faltaba
 } from "lucide-react";
+
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("inicio");
@@ -22,13 +25,13 @@ export default function App() {
   return (
     <div className="bg-[#fffdf8] text-[#244674] font-[Poppins] overflow-x-hidden">
       {/* HEADER */}
-      <header className="bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm border-b border-[#e5e5e5]">
+      <header className="bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm border-b border-[#F3E5AB]">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4 md:py-6">
           <div className="flex items-center gap-3 cursor-pointer">
             <img
               src="/assets1.png"
               alt="Logo Veterinaria Barcelona"
-              className="w-10 h-10 rounded-full object-cover border border-[#a3d9b1]/60 shadow-sm"
+              className="w-10 h-10 rounded-full object-cover border border-[#F3E5AB]/60 shadow-sm"
             />
             <h1 className="text-2xl font-bold text-[#274472] tracking-tight">
               Veterinaria Barcelona
@@ -36,126 +39,197 @@ export default function App() {
           </div>
 
           <nav className="hidden md:flex items-center gap-10 text-[#274472]/90 font-medium text-lg">
-            <a href="#servicios" className="hover:text-[#a3d9b1] transition">
+            <a href="#servicios" className="hover:text-[#F3E5AB] transition">
               Servicios
             </a>
-            <a href="#equipo" className="hover:text-[#a3d9b1] transition">
+            <a href="#equipo" className="hover:text-[#F3E5AB] transition">
               Equipo
             </a>
-            <a href="#galeria" className="hover:text-[#a3d9b1] transition">
+            <a href="#galeria" className="hover:text-[#F3E5AB] transition">
               Galería
             </a>
-            <a href="#contacto" className="hover:text-[#a3d9b1] transition">
+            <a href="#contacto" className="hover:text-[#F3E5AB] transition">
               Contacto
             </a>
           </nav>
 
           <button
             onClick={() => scrollTo("contacto")}
-            className="hidden md:block bg-[#274472] text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-[#1f3a5f] hover:shadow-md transition-all"
+            className="hidden md:block bg-[#7f8353] text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-[#1f3a5f] hover:shadow-md transition-all"
           >
             Agendar cita
           </button>
         </div>
       </header>
 
-      {/* HERO */}
-      <section
-        id="inicio"
-        className="relative flex flex-col justify-center items-center text-center w-full min-h-[75vh] bg-gradient-to-b from-[#eaf8f0] to-[#fff8ef] overflow-hidden pt-32"
+     {/* HERO F3E5AB  7f8353 */}
+<section
+  id="inicio"
+  className="relative w-full min-h-[80vh] bg-gradient-to-b from-[#eaf8f0] to-[#fff8ef] flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10 overflow-hidden pt-32"
+>
+  {/* Fondo decorativo */}
+  <img
+    src="https://images.unsplash.com/photo-1612831455544-38da427b4b86?auto=format&fit=crop&w=1400&q=80"
+    alt="Mascotas felices"
+    className="absolute inset-0 w-full h-full object-cover opacity-10"
+  />
+
+  <div className="relative z-10 flex-1 text-center md:text-left">
+    <h1 className="text-4xl md:text-6xl font-extrabold text-[#274472] leading-tight mb-5 drop-shadow-sm">
+      Salud <span className="text-[#7f8353]">animal</span>
+    </h1>
+    <p className="text-base md:text-lg text-[#274472]/80 mb-8 leading-relaxed max-w-xl">
+      Comprometidos con la salud y el bienestar de tu mejor amigo 🐶🐱
+    </p>
+
+    <div className="flex justify-center md:justify-start gap-6 flex-wrap mt-8">
+      <button
+        onClick={() => scrollTo("contacto")}
+        className="group relative inline-flex items-center justify-center px-10 py-4 text-lg md:text-xl font-semibold text-[#274472] bg-[#7f8353] rounded-full shadow-lg hover:bg-[#F3E5AB] hover:-translate-y-[3px] transition-all"
       >
+        Agendar cita
+      </button>
+      <button
+        onClick={() => scrollTo("servicios")}
+        className="px-10 py-4 text-lg md:text-xl font-semibold rounded-full border-2 border-[#7f8353] text-[#7f8353] hover:bg-[#7f8353] hover:text-white shadow-md hover:shadow-lg hover:-translate-y-[3px] transition-all"
+      >
+        Ver servicios
+      </button>
+    </div>
+  </div>
+
+  {/* Lado derecho: logo grande */}
+  <div className="relative z-10 flex-1 flex justify-center items-center">
+    <div className="bg-white rounded-full shadow-2xl p-10 md:p-16 border border-[#a3d9b1]/50">
+      <img
+        src="/assets1.png"
+        alt="Logo Veterinaria Barcelona"
+        className="w-52 h-52 md:w-64 md:h-64 object-contain"
+      />
+    </div>
+  </div>
+
+  {/* Curva inferior */}
+  <div className="absolute bottom-0 left-0 w-full h-20 bg-[#fffdf8] rounded-t-[60px]" />
+</section>
+
+
+    {/* SERVICIOS */}
+<section
+  id="servicios"
+  className="py-28 px-6 bg-white text-center rounded-t-[4rem]"
+>
+  <h2 className="text-4xl font-bold mb-16 text-[#244674]">
+    Nuestros Servicios
+  </h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+    {[
+      { Icon: Stethoscope, color: "#9ed2b1", title: "Consultas", desc: "Atención personalizada para tu mascota — perros, gatos y animales no convencionales." },
+      { Icon: HeartPulse, color: "#f5b742", title: "Cirugía", desc: "Atención especializada en tejidos blandos y ortopedia." },
+      { Icon: Stethoscope, color: "#244674", title: "Diagnóstico", desc: "Análisis clínico, ultrasonido, radiografía, ecocardiograma y electrocardiograma." },
+      { Icon: PawPrint, color: "#9ed2b1", title: "Fisioterapia y rehabilitación", desc: "Contamos con especialistas en recuperación física y terapias de movilidad." },
+      { Icon: HeartPulse, color: "#f5a623", title: "Medicina preventiva", desc: "Vacunas y desparasitación interna y externa para mantener la salud de tu mascota." },
+      { Icon: Mail, color: "#244674", title: "Certificados de salud para viaje", desc: "Emitimos certificados nacionales e internacionales, incluyendo servicio para transporte de mascotas." },
+      { Icon: PawPrint, color: "#9ed2b1", title: "Estética canina", desc: "Baño, baño medicado y corte de pelo con productos naturales y atención cuidadosa." },
+      { Icon: HeartPulse, color: "#f5b742", title: "Servicio funerario", desc: "Cremación de mascotas con respeto y empatía." },
+      { Icon: Bone, color: "#a3d9b1", title: "Venta de alimento", desc: "Alimento de prescripción médica y opciones para cada etapa de la vida de tu mascota." },
+    ].map(({ Icon, color, title, desc }, i) => (
+      <div
+        key={i}
+        className="bg-[#fffdf8] rounded-3xl shadow-md p-10 border border-[#f2f2f2] hover:shadow-lg hover:scale-[1.02] transition-transform duration-300 ease-out"
+      >
+        <div className="mb-6 flex justify-center">
+          <Icon size={50} style={{ color }} />
+        </div>
+        <h3 className="text-2xl font-semibold mb-3 text-[#244674]">
+          {title}
+        </h3>
+        <p className="text-[#244674]/70 leading-relaxed">{desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+     {/* EQUIPO */}
+<section
+  id="equipo"
+  className="bg-[#fffdf8] py-28 px-6 text-center rounded-t-[4rem]"
+>
+  {/* Título */}
+  <h2 className="text-4xl font-bold mb-4 text-[#7f8353]">
+    Conoce a nuestro equipo
+  </h2>
+  <p className="text-[#244674]/80 mb-8 text-lg leading-relaxed">
+    Egresados de la <strong>Universidad Nacional Autónoma de México</strong>
+  </p>
+
+  {/* Logo UNAM */}
+  <div className="flex justify-center mb-20">
+    <img
+      src="/unam-logo.png"
+      alt="Logo UNAM"
+      className="w-60 h-auto opacity-90"
+    />
+  </div>
+
+  {/* Dos columnas: Dra. Cinthya y Dr. Christopher */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto text-left">
+    {/* Dra. Cinthya */}
+    <div className="bg-white rounded-3xl border border-[#F3E5AB] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
+      <div className="flex flex-col items-center text-center mb-8">
         <img
-          src="https://images.unsplash.com/photo-1612831455544-38da427b4b86?auto=format&fit=crop&w=1400&q=80"
-          alt="Mascotas felices"
-          className="absolute inset-0 w-full h-full object-cover opacity-10"
+          src="/dra-cinthya.png"
+          alt="Dra. Cinthya"
+          className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
         />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#274472] leading-tight mb-5 drop-shadow-sm">
-            Cuidamos el corazón de{" "}
-            <span className="text-[#f5a623]">tus mascotas</span>
-          </h1>
-          <p className="text-base md:text-lg text-[#274472]/80 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Atención médica, amor y bienestar para cada peludo que confía en nosotros.
-          </p>
-
-          <div className="flex justify-center gap-8 flex-wrap mt-10">
-            <button
-              onClick={() => scrollTo("contacto")}
-              className="group relative inline-flex items-center justify-center px-12 py-5 text-lg md:text-xl font-semibold text-[#274472] bg-[#a3d9b1] rounded-full shadow-lg hover:bg-[#94cea6] hover:-translate-y-[3px] transition-all"
-            >
-              Agendar cita
-            </button>
-            <button
-              onClick={() => scrollTo("servicios")}
-              className="px-12 py-5 text-lg md:text-xl font-semibold rounded-full border-2 border-[#f5a623] text-[#f5a623] hover:bg-[#f5a623] hover:text-white shadow-md hover:shadow-lg hover:-translate-y-[3px] transition-all"
-            >
-              Ver servicios
-            </button>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-[#fffdf8] rounded-t-[60px]" />
-      </section>
-
-      {/* SERVICIOS */}
-      <section id="servicios" className="py-28 px-6 bg-white text-center rounded-t-[4rem]">
-        <h2 className="text-4xl font-bold mb-16 text-[#244674]">
-          Nuestros Servicios
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {[
-            {
-              icon: <Stethoscope size={50} className="text-[#9ed2b1]" />,
-              title: "Consultas y diagnóstico",
-              desc: "Atención profesional con equipos de última generación.",
-            },
-            {
-              icon: <HeartPulse size={50} className="text-[#f5b742]" />,
-              title: "Cirugías y emergencias",
-              desc: "Cuidamos de tu mascota en cada momento crítico.",
-            },
-            {
-              icon: <PawPrint size={50} className="text-[#244674]" />,
-              title: "Baños, spa y estética",
-              desc: "Consentimos a tu compañero con productos naturales.",
-            },
-          ].map((s, i) => (
-            <div
-              key={i}
-              className="bg-[#fffdf8] rounded-3xl shadow-md p-10 border border-[#f2f2f2] hover:shadow-lg hover:scale-[1.02] transition-transform"
-            >
-              <div className="mb-6">{s.icon}</div>
-              <h3 className="text-2xl font-semibold mb-3">{s.title}</h3>
-              <p className="text-[#244674]/70 leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* EQUIPO */}
-      <section id="equipo" className="bg-[#f6fdf8] py-28 px-6 text-center rounded-t-[4rem]">
-        <h2 className="text-4xl font-bold mb-10 text-[#244674]">
-          Conoce a nuestro equipo
-        </h2>
-        <p className="max-w-3xl mx-auto text-[#244674]/80 mb-16 text-lg leading-relaxed">
-          Un grupo de profesionales apasionados por los animales, con años de experiencia y una filosofía centrada en el bienestar integral.
+        <h3 className="text-2xl font-bold text-[#7f8353]">Dra. Cinthya</h3>
+        <p className="text-sm text-[#244674]/70 mt-1">
+          Especialista en Fisioterapia y Rehabilitación Animal
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition">
-              <div className="w-32 h-32 rounded-full mx-auto bg-[#e4e4e4] mb-6" />
-              <h3 className="text-xl font-semibold">Dr. Nombre Apellido</h3>
-              <p className="text-sm text-[#244674]/70">
-                Especialista en medicina general
-              </p>
-              <p className="mt-4 text-sm italic text-[#244674]/60 leading-relaxed">
-                “Mi misión es que cada mascota salga más feliz de lo que llegó.”
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      </div>
 
-      {/* RESEÑAS */}
+      <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-1">
+        <li>Dermatología</li>
+        <li>Medicina Ortomolecular</li>
+        <li>Medicina Estética Canina</li>
+        <li>Medicina Felina</li>
+        <li>Ecografía</li>
+      </ul>
+    </div>
+
+    {/* Dr. Christopher */}
+    <div className="bg-white rounded-3xl border border-[#F3E5AB] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
+      <div className="flex flex-col items-center text-center mb-8">
+        <img
+          src="/dr-christopher.png"
+          alt="Dr. Christopher"
+          className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
+        />
+        <h3 className="text-2xl font-bold text-[#7f8353]">Dr. Christopher</h3>
+        <p className="text-sm text-[#244674]/70 mt-1">
+          Especialista en Fisioterapia y Rehabilitación Animal
+        </p>
+      </div>
+
+      <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-1">
+        <li>Ultrasonido</li>
+        <li>Gatos</li>
+        <li>Inyectoterapia y Anestesia</li>
+        <li>Nutrición y peso</li>
+        <li>Rehabilitación no canina</li>
+        <li>Dermatología</li>
+        <li>Oncología y Cirugía</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+      {/* RESEÑAS 
       <section id="reseñas" className="py-28 px-6 bg-[#f6fdf8] rounded-t-[4rem]">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold text-[#274472] mb-4">
@@ -205,7 +279,7 @@ export default function App() {
             </div>
           ))}
         </div>
-      </section>
+      </section>*/}
 
 
 {/* GALERÍA DE INSTALACIONES */}
@@ -215,8 +289,7 @@ export default function App() {
       Nuestras Instalaciones
     </h2>
     <p className="text-[#274472]/80 max-w-2xl mx-auto text-lg leading-relaxed">
-      Espacios diseñados para el confort y bienestar de tus mascotas, con
-      tecnología moderna y un ambiente acogedor.
+      Espacios diseñados para el confort y bienestar de tus mascotas.
     </p>
   </div>
 
@@ -254,7 +327,7 @@ export default function App() {
     {[...Array(5)].map((_, i) => (
       <div
         key={i}
-        className="w-10 h-3 rounded-full bg-[#a3d9b1] opacity-70 hover:opacity-100 transition"
+        className="w-10 h-3 rounded-full bg-[#F3E5AB] opacity-70 hover:opacity-100 transition"
       ></div>
     ))}
   </div>
@@ -295,7 +368,7 @@ export default function App() {
     href="https://maps.app.goo.gl/7zgpfTZCyC6yqmXj9"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-block bg-[#274472] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#1f3a5f] hover:shadow-md transition-all duration-300 ease-out"
+    className="inline-block bg-[#7f8353] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#F3E5AB] hover:shadow-md transition-all duration-300 ease-out"
   >
     Ver reseñas en Google →
   </a>
@@ -398,7 +471,7 @@ export default function App() {
   />
   <button
     type="submit"
-    className="mt-4 bg-[#f5a623] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#274472] hover:text-white transition"
+    className="mt-4 bg-[#7f8353] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#F3E5AB] hover:text-white transition"
   >
     Enviar mensaje
   </button>
@@ -428,13 +501,13 @@ export default function App() {
 
 
     {/* Footer */}
-<footer className="bg-[#244674] text-white text-center py-10 mt-10 rounded-t-[3rem]">
+<footer className="bg-[#7f8353] text-white text-center py-10 mt-10 rounded-t-[3rem]">
   <p>© 2025 Veterinaria Barcelona — Cuidamos lo que más amas 🐾</p>
-  <p className="mt-3 text-sm text-[#9ed2b1]">
+  <p className="mt-3 text-sm text-[#274472]">
     Diseño Natural & Caring • Hecho en Evolvian •{" "}
     <a
       href="/aviso-de-privacidad"
-      className="underline text-[#a3d9b1] hover:text-white transition"
+      className="underline text-[#274472] hover:text-white transition"
     >
       Aviso de Privacidad
     </a>
