@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div className="bg-[#fffdf8] text-[#244674] font-[Poppins] overflow-x-hidden">
       {/* HEADER */}
-      <header className="bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm border-b border-[#F3E5AB]">
+      <header className="bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm border-b border-[#F2E9D8]">
   <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4 md:py-6">
     {/* LOGO */}
     <div
@@ -38,7 +38,7 @@ export default function App() {
       <img
         src="/assets1.png"
         alt="Logo Veterinaria Barcelona"
-        className="w-10 h-10 rounded-full object-cover border border-[#F3E5AB]/60 shadow-sm"
+        className="w-10 h-10 rounded-full object-cover border border-[#F2E9D8]/60 shadow-sm"
       />
       <h1 className="text-2xl font-bold text-[#274472] tracking-tight">
         Veterinaria Barcelona
@@ -58,7 +58,7 @@ export default function App() {
           onClick={() =>
             document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
           }
-          className="hover:text-[#F3E5AB] transition bg-transparent border-none focus:outline-none cursor-pointer"
+          className="hover:text-[#F2E9D8] transition bg-transparent border-none focus:outline-none cursor-pointer"
         >
           {label}
         </button>
@@ -69,7 +69,7 @@ export default function App() {
 
 {/* BOTÓN AGENDA */}
     <motion.button
-      whileHover={{ scale: 1.05, backgroundColor: "#F3E5AB", color: "#274472" }}
+      whileHover={{ scale: 1.05, backgroundColor: "#F2E9D8", color: "#274472" }}
       whileTap={{ scale: 0.97 }}
       onClick={() =>
         document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
@@ -83,7 +83,7 @@ export default function App() {
 </header>
 
 
-     {/* HERO F3E5AB  7f8353 */}
+     {/* HERO F2E9D8  7f8353 */}
 <section
   id="inicio"
   className="relative w-full min-h-[80vh] bg-gradient-to-b from-[#eaf8f0] to-[#fff8ef] flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10 overflow-hidden pt-32"
@@ -106,7 +106,7 @@ export default function App() {
     <div className="flex justify-center md:justify-start gap-6 flex-wrap mt-8">
       <button
         onClick={() => scrollTo("contacto")}
-        className="group relative inline-flex items-center justify-center px-10 py-4 text-lg md:text-xl font-semibold text-[#274472] bg-[#7f8353] rounded-full shadow-lg hover:bg-[#F3E5AB] hover:-translate-y-[3px] transition-all"
+        className="group relative inline-flex items-center justify-center px-10 py-4 text-lg md:text-xl font-semibold text-[#274472] bg-[#7f8353] rounded-full shadow-lg hover:bg-[#F2E9D8] hover:-translate-y-[3px] transition-all"
       >
         Agendar cita
       </button>
@@ -151,8 +151,8 @@ export default function App() {
       { Icon: Stethoscope, color: "#244674", title: "Diagnóstico", desc: "Análisis clínico, ultrasonido, radiografía, ecocardiograma y electrocardiograma." },
       { Icon: PawPrint, color: "#9ed2b1", title: "Fisioterapia y rehabilitación", desc: "Contamos con especialistas en recuperación física y terapias de movilidad." },
       { Icon: HeartPulse, color: "#f5a623", title: "Medicina preventiva", desc: "Vacunas y desparasitación interna y externa para mantener la salud de tu mascota." },
-      { Icon: Mail, color: "#244674", title: "Certificados de salud para viaje", desc: "Emitimos certificados nacionales e internacionales, incluyendo servicio para transporte de mascotas." },
-      { Icon: PawPrint, color: "#9ed2b1", title: "Estética canina", desc: "Baño, baño medicado y corte de pelo con productos naturales y atención cuidadosa." },
+      { Icon: Mail, color: "#244674", title: "Certificados de salud para viaje", desc: "Emitimos certificados nacionales e internacionales." },
+      { Icon: PawPrint, color: "#9ed2b1", title: "Estética canina", desc: "Baño, baño medicado y corte de pelo con atención cuidadosa." },
       { Icon: HeartPulse, color: "#f5b742", title: "Servicio funerario", desc: "Cremación de mascotas con respeto y empatía." },
       { Icon: Bone, color: "#a3d9b1", title: "Venta de alimento", desc: "Alimento de prescripción médica y opciones para cada etapa de la vida de tu mascota." },
     ].map(({ Icon, color, title, desc }, i) => (
@@ -199,10 +199,10 @@ export default function App() {
   {/* Dos columnas: Dra. Cinthya y Dr. Christopher */}
   <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto text-left">
     {/* Dra. Cinthya */}
-    <div className="bg-white rounded-3xl border border-[#F3E5AB] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
+    <div className="bg-white rounded-3xl border border-[#F2E9D8] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
       <div className="flex flex-col items-center text-center mb-8">
         <img
-          src="/dra-cinthya.png"
+          src="/cin.png"
           alt="Dra. Cinthya"
           className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
         />
@@ -222,29 +222,31 @@ export default function App() {
     </div>
 
     {/* Dr. Christopher */}
-    <div className="bg-white rounded-3xl border border-[#F3E5AB] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
-      <div className="flex flex-col items-center text-center mb-8">
-        <img
-          src="/dr-christopher.png"
-          alt="Dr. Christopher"
-          className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
-        />
-        <h3 className="text-2xl font-bold text-[#7f8353]">Dr. Christopher</h3>
-        <p className="text-sm text-[#244674]/70 mt-1">
-          Especialista en Fisioterapia y Rehabilitación Animal
-        </p>
-      </div>
+    
+<div className="bg-white rounded-3xl border border-[#F2E9D8] shadow-lg hover:shadow-2xl transition-all duration-300 p-10">
+  <div className="flex flex-col items-center text-center mb-8">
+    <img
+      src="/chris.png"
+      alt="Dr. Christopher"
+      className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
+    />
+    <h3 className="text-2xl font-bold text-[#7f8353]">Dr. Christopher</h3>
+    
+  </div>
 
-      <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-1">
-        <li>Ultrasonido</li>
-        <li>Gatos</li>
-        <li>Inyectoterapia y Anestesia</li>
-        <li>Nutrición y peso</li>
-        <li>Rehabilitación no canina</li>
-        <li>Dermatología</li>
-        <li>Oncología y Cirugía</li>
-      </ul>
-    </div>
+  <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-2 text-left">
+    <li>Especialista en fisioterapia y rehabilitación de pequeñas
+        especies - Universidad del Valle de México</li>
+    <li>Diplomado internacional de ultrasonografía — Campus Veterinario</li>
+    <li>Diplomado en estomatología y gastroenterología en perros y gatos — AMVENAC</li>
+    <li>Diplomado en nutrición y alimentación clínica de perros y gatos — UNAM</li>
+    <li>Diplomado en nutrición y alimentación en animales de compañía no convencionales — UNAM</li>
+    <li>Diplomado en infectología de perros y gatos — UNAM</li>
+    <li>Diplomado en dermatología en perros y gatos — AMVENAC</li>
+    <li>Diplomado en nutrición en ovinos y caprinos — UNAM</li>
+  </ul>
+</div>
+
   </div>
 </section>
 
@@ -348,7 +350,7 @@ export default function App() {
     {[...Array(5)].map((_, i) => (
       <div
         key={i}
-        className="w-10 h-3 rounded-full bg-[#F3E5AB] opacity-70 hover:opacity-100 transition"
+        className="w-10 h-3 rounded-full bg-[#F2E9D8] opacity-70 hover:opacity-100 transition"
       ></div>
     ))}
   </div>
@@ -389,7 +391,7 @@ export default function App() {
     href="https://maps.app.goo.gl/7zgpfTZCyC6yqmXj9"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-block bg-[#7f8353] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#F3E5AB] hover:shadow-md transition-all duration-300 ease-out"
+    className="inline-block bg-[#7f8353] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#F2E9D8] hover:shadow-md transition-all duration-300 ease-out"
   >
     Ver reseñas en Google →
   </a>
@@ -492,7 +494,7 @@ export default function App() {
   />
   <button
     type="submit"
-    className="mt-4 bg-[#7f8353] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#F3E5AB] hover:text-white transition"
+    className="mt-4 bg-[#7f8353] text-[#274472] py-3 rounded-xl font-semibold hover:bg-[#F2E9D8] hover:text-white transition"
   >
     Enviar mensaje
   </button>
@@ -523,9 +525,9 @@ export default function App() {
 
     {/* Footer */}
 <footer className="bg-[#7f8353] text-white text-center py-10 mt-10 rounded-t-[3rem]">
-  <p>© 2025 Veterinaria Barcelona — Cuidamos lo que más amas 🐾</p>
+  <p>© 2025 Veterinaria Barcelona — Salud animal 🐾</p>
   <p className="mt-3 text-sm text-[#274472]">
-    Diseño Natural & Caring • Hecho en Evolvian •{" "}
+    {" "}
     <a
       href="/aviso-de-privacidad"
       className="underline text-[#274472] hover:text-white transition"
@@ -557,7 +559,7 @@ export default function App() {
 
 {/* Banner de cookies avanzado */}
 {!document.cookie.includes("cookieConsent=") && (
-  <div className="fixed bottom-0 left-0 w-full bg-[#274472] text-white text-sm md:text-base py-4 px-6 flex flex-col md:flex-row items-center justify-center md:justify-center gap-4 shadow-lg z-50">
+  <div className="fixed bottom-0 left-0 w-full bg-[#7f8353] text-white text-sm md:text-base py-4 px-6 flex flex-col md:flex-row items-center justify-center md:justify-center gap-4 shadow-lg z-50">
     <p className="text-center md:text-left leading-snug max-w-[600px]">
       🍪 Usamos cookies para mejorar tu experiencia, analizar el tráfico y
       ofrecerte contenido personalizado.{" "}
@@ -587,7 +589,7 @@ export default function App() {
           document.cookie = `cookieConsent=all; expires=${expiry.toUTCString()}; path=/; SameSite=Lax`;
           window.location.reload();
         }}
-        className="bg-[#a3d9b1] text-[#274472] font-semibold px-4 py-2 rounded-full hover:bg-[#94cea6] transition"
+        className="bg-[#F2E9D8] text-[#274472] font-semibold px-4 py-2 rounded-full hover:bg-[#7f8353] transition"
       >
         Aceptar todas
       </button>
