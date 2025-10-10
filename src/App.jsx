@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+
 import {
   PawPrint,
   Stethoscope,
@@ -26,41 +27,61 @@ export default function App() {
     <div className="bg-[#fffdf8] text-[#244674] font-[Poppins] overflow-x-hidden">
       {/* HEADER */}
       <header className="bg-white/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm border-b border-[#F3E5AB]">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4 md:py-6">
-          <div className="flex items-center gap-3 cursor-pointer">
-            <img
-              src="/assets1.png"
-              alt="Logo Veterinaria Barcelona"
-              className="w-10 h-10 rounded-full object-cover border border-[#F3E5AB]/60 shadow-sm"
-            />
-            <h1 className="text-2xl font-bold text-[#274472] tracking-tight">
-              Veterinaria Barcelona
-            </h1>
-          </div>
+  <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4 md:py-6">
+    {/* LOGO */}
+    <div
+      className="flex items-center gap-3 cursor-pointer"
+      onClick={() =>
+        document.getElementById("inicio")?.scrollIntoView({ behavior: "smooth" })
+      }
+    >
+      <img
+        src="/assets1.png"
+        alt="Logo Veterinaria Barcelona"
+        className="w-10 h-10 rounded-full object-cover border border-[#F3E5AB]/60 shadow-sm"
+      />
+      <h1 className="text-2xl font-bold text-[#274472] tracking-tight">
+        Veterinaria Barcelona
+      </h1>
+    </div>
 
-          <nav className="hidden md:flex items-center gap-10 text-[#274472]/90 font-medium text-lg">
-            <a href="#servicios" className="hover:text-[#F3E5AB] transition">
-              Servicios
-            </a>
-            <a href="#equipo" className="hover:text-[#F3E5AB] transition">
-              Equipo
-            </a>
-            <a href="#galeria" className="hover:text-[#F3E5AB] transition">
-              Galería
-            </a>
-            <a href="#contacto" className="hover:text-[#F3E5AB] transition">
-              Contacto
-            </a>
-          </nav>
+    {/* NAV LINKS */}
+    <nav className="hidden md:flex items-center gap-10 text-[#274472]/90 font-medium text-lg">
+      {[
+        { id: "servicios", label: "Servicios" },
+        { id: "equipo", label: "Equipo" },
+        { id: "galeria", label: "Galería" },
+        { id: "contacto", label: "Contacto" },
+      ].map(({ id, label }) => (
+        <button
+          key={id}
+          onClick={() =>
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="hover:text-[#F3E5AB] transition bg-transparent border-none focus:outline-none cursor-pointer"
+        >
+          {label}
+        </button>
+      ))}
+    </nav>
 
-          <button
-            onClick={() => scrollTo("contacto")}
-            className="hidden md:block bg-[#7f8353] text-white px-8 py-3 rounded-full text-base font-semibold hover:bg-[#1f3a5f] hover:shadow-md transition-all"
-          >
-            Agendar cita
-          </button>
-        </div>
-      </header>
+    {/* BOTÓN AGENDA */}
+
+{/* BOTÓN AGENDA */}
+    <motion.button
+      whileHover={{ scale: 1.05, backgroundColor: "#F3E5AB", color: "#274472" }}
+      whileTap={{ scale: 0.97 }}
+      onClick={() =>
+        document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
+      }
+      className="hidden md:block bg-[#7f8353] text-white px-8 py-3 rounded-full text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+    >
+      Agendar cita
+    </motion.button>
+
+  </div>
+</header>
+
 
      {/* HERO F3E5AB  7f8353 */}
 <section
