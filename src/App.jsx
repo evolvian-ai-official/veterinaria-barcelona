@@ -151,7 +151,7 @@ export default function App() {
       { Icon: Stethoscope, color: "#244674", title: "Diagnóstico", desc: "Análisis clínico, ultrasonido, radiografía, ecocardiograma y electrocardiograma." },
       { Icon: PawPrint, color: "#9ed2b1", title: "Fisioterapia y rehabilitación", desc: "Contamos con especialistas en recuperación física y terapias de movilidad." },
       { Icon: HeartPulse, color: "#f5a623", title: "Medicina preventiva", desc: "Vacunas y desparasitación interna y externa para mantener la salud de tu mascota." },
-      { Icon: Mail, color: "#244674", title: "Certificados de salud para viaje", desc: "Emitimos certificados nacionales e internacionales." },
+      { Icon: Mail, color: "#244674", title: "Certificados de salud para viaje", desc: "Emitimos certificados nacionales e internacionales. Incluyendo certificado de gusano barrenador." },
       { Icon: PawPrint, color: "#9ed2b1", title: "Estética canina", desc: "Baño, baño medicado y corte de pelo con atención cuidadosa." },
       { Icon: HeartPulse, color: "#f5b742", title: "Servicio funerario", desc: "Cremación de mascotas con respeto y empatía." },
       { Icon: Bone, color: "#a3d9b1", title: "Venta de alimento", desc: "Alimento de prescripción médica y opciones para cada etapa de la vida de tu mascota." },
@@ -207,18 +207,17 @@ export default function App() {
           className="w-36 h-36 rounded-full object-cover border-4 border-[#7f8353] shadow-md mb-4"
         />
         <h3 className="text-2xl font-bold text-[#7f8353]">Dra. Cinthya</h3>
-        <p className="text-sm text-[#244674]/70 mt-1">
-          Especialista en Fisioterapia y Rehabilitación Animal
-        </p>
+        
       </div>
 
-      <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-1">
-        <li>Dermatología</li>
-        <li>Medicina Ortomolecular</li>
-        <li>Medicina Estética Canina</li>
-        <li>Medicina Felina</li>
-        <li>Ecografía</li>
-      </ul>
+      <ul className="text-[#244674]/80 leading-relaxed text-base list-disc list-inside space-y-2 text-left">
+    <li>Especialista en fisioterapia y rehabilitación depequeñas especies - Universidad del Valle de México</li>
+    <li>Diplomado en medicina preventiva y salud pública — UNAM</li>
+    <li>Diplomado “Mi paciente el gato” — Campus Veterinario</li>
+    <li>Diplomado internacional en medicina felina — Vetschool</li>
+    <li>Diplomado en dermatología — AMVENAC</li>
+    <li>Diplomado en especialidades de perro y gato — AMVENAC</li>
+     </ul>
     </div>
 
     {/* Dr. Christopher */}
